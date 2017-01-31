@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DiffNote</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+    </style>
+    <script>
+$(function() {
+  $('#btn-create-note').click(function() {
+    $.ajax({
+      url: '/api/notes',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        window.location.replace(data.note_url);
+      },
+    });
+  });
+});
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">DiffNote</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              Source
+              <span class="glyphicon glyphicon-file"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>DiffNote</h1>
+        <p>Share the difference of the document</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row content">
+        <div class="col-sm-offset-1 col-sm-7">
+          <img src="/static/how_to_use.gif"
+               class="img img-responsive"
+               alt="Example of Note">
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-lg btn-info"
+                  id="btn-create-note" style="width:100%">
+            Create Note
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

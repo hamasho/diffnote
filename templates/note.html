@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DiffNote / Note ID: {{ note_id }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/3.2.0/diff.js"></script>
+    <script src="/static/Diff.js"></script>
+    <script src="/static/difflib.js"></script>
+    <script src="/static/script.js"></script>
+    <style>
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+#note {
+  width: 100%;
+}
+.text-wrapper {
+  margin:5px 0;
+  padding:3px;
+}
+#btn-snapshot {
+  margin-top: 10px;
+}
+
+.diff-panel-wrapper {
+  padding: 10px;
+}
+.diff-panel {
+  margin-top: 10px;
+}
+.diff-removed-line {
+  padding: 5px;
+}
+.diff-added-line {
+  padding: 5px;
+}
+.diff-removed-char {
+  text-decoration: line-through;
+  font-weight: bold;
+}
+.diff-added-char {
+  font-weight: bold;
+}
+.diff-memo-wrapper {
+}
+.diff-memo {
+  width: 100%;
+  height: 100%;
+}
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">DiffNote</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              Source
+              <span class="glyphicon glyphicon-file"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row content">
+
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+              <button id="btn-snapshot"
+                      class="btn btn-lg btn-info"
+                      autocomplete="off"
+                      style="width:100%">
+                Save Snapshot
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-wrapper">
+              <textarea id="note" name="note" rows="30"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div id="diff-panel-wrapper">
+
+            <!--
+              <div class="diff-panel">
+              <div class="diff-removed-line bg-danger">
+              This is a removed line.
+              </div>
+              <div class="diff-added-line bg-success">
+              This is an added line.
+              </div>
+              <div class="diff-memo-wrapper">
+              <textarea class="diff-memo" cols="30" rows="1"></textarea>
+              </div>
+              </div>
+            -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
