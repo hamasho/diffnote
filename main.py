@@ -76,7 +76,7 @@ if __name__ == '__main__':
         # (r'/api/notes', NoteApiHandler),
         (r'/api/notes', NoteApiHandler),
         (r'/notes/([0-9]+)', NoteTemplateHandler),
-        (r'/favicon.ico', web.StaticFileHandler, {'path': 'static/favicon.ico'}),
+        (r'/(favicon.ico)', web.StaticFileHandler, {'path': 'static'}),
         (r'/static/(.*)', web.StaticFileHandler, {'path': 'static'}),
         (r'/', HomeTemplateHandler),
     ], debug=True)
